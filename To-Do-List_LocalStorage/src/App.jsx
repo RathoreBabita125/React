@@ -5,14 +5,8 @@ import TodoForm from './Components/TodoForm';
 import TodoItem from './Components/TodoItem';
 
 function App() {
-  const [todos, setTodos] = useState(() => {
-    try {
-      const localData = localStorage.getItem("todos");
-      return localData ? JSON.parse(localData) : [];
-    } catch {
-      return [];
-    }
-  });
+
+  const [todos, setTodos] = useState([]);
 
   const addTodo=(todo)=>{
     setTodos((pre)=>[{id:Date.now(),...todo},...pre])
@@ -26,8 +20,8 @@ function App() {
     setTodos((pre)=>pre.filter((todo)=> todo.id!==id))
   }
 
-  const toggleComplete=(id)=>{
-    setTodos((pre)=>pre.map((preTodo)=>preTodo===id?{...preTodo, completed:!preTodo.completed}:preTodo))
+  const toggleCompleted=(id)=>{
+    setTodos((pre)=>pre.map((preTodo)=>preTodo.id===id?{...preTodo, completed:!preTodo.completed}:preTodo))
 
   }
 
@@ -41,12 +35,12 @@ function App() {
 
   useEffect(()=>{
 
-    localStorage.setItem("todos", JSON.stringify("todos"))
+    localStorage.setItem("todos", JSON.stringify(todos))
     
   },[todos])
 
   return (
-    <TodoProvider value={{todos,addTodo,updateTodo,deleteTodo,toggleComplete}}>
+    <TodoProvider value={{todos,addTodo,updateTodo,deleteTodo,toggleCompleted}}>
       <div className="bg-[#172842] min-h-screen py-8">
         <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
           <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
@@ -73,6 +67,7 @@ function App() {
 }
 
 export default App
+
 
 
 
