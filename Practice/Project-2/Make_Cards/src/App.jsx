@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <h1 style={{backgroundColor:'grey', color:'#fff'}}>Different Restaurants Cards</h1>
+      <br />
 
       <div style={{ display: 'flex', gap: 20,}}>
 
@@ -23,6 +24,17 @@ function App() {
           <Card name="Gujrati Food" image="https://shorturl.at/ELvbN" btnName="Explore Here"/>
           <Card name="Famous Viryani" image="https://shorturl.at/Qs0t2" btnName="Know More"/>  
         </div>
+
+        <div>
+          <Card name="Madhuvani" image="https://shorturl.at/i66Iv" btnName="Explore Here"/>
+          <Card name="Ashok Dhaba" image="https://shorturl.at/uvp51" btnName="Know More"/>  
+        </div>
+
+        <div>
+          <Card name="Chinese Food" image="https://shorturl.at/rs8Hk" btnName="Explore Here"/>
+          <Card name="Five Star Hotel" image="https://shorturl.at/EO2np" btnName="Know More"/>  
+        </div>
+        
 
       </div>
     </>
