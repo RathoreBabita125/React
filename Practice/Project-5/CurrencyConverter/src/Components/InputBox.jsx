@@ -26,6 +26,7 @@ function InputBox({
                 className="text-black/60 font-bold mb-2 inline-block mr-40">
                     {label}
                 </label>
+                              
                 <input  
                     id={amountID}                  
                     className="outline-none w-full bg-transparent py-1.5 text-black"
