@@ -1,0 +1,7 @@
+.hide-vertical-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+.hide-vertical-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
