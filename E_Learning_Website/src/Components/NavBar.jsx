@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import useTheme from '../Context/ThemeContext'
 import { NavLink, Link } from 'react-router-dom'
 
 function NavBar() {
 
     const { themeMode, lightMode, darkMode } = useTheme()
+    const [menuOpen, setMenuOpen]=useState(false)
 
     const OnclickHandler = () => {
         if (themeMode === 'light') {
@@ -12,6 +14,10 @@ function NavBar() {
         else {
             lightMode()
         }
+    }
+
+    const toggleMenu=()=>{
+        setMenuOpen(!menuOpen)
     }
 
     return (
@@ -54,11 +60,21 @@ function NavBar() {
                     <button className='mx-2 bg-cyan-700 text-white p-[4px] rounded-[4px] cursor-pointer'>Login/Signup</button>
                 </div>
                 <div className='md:hidden'>
-                    <a
+                    <Link
+                        onClick={toggleMenu}
                         className='text-5xl '
-                        href="#">&#8801;</a>
+                        href="#">&#8801;</Link>
                 </div>
             </div>
+
+            {menuOpen && (
+                <div className='md:hidden bg-cyan-950 px-4 pb-2 space-y-2'>
+                    <NavLink to="/" onClick={toggleMenu} className="block py-2 hover:text-cyan-400">Home</NavLink>
+                    <NavLink to="/about" onClick={toggleMenu} className="block py-2 hover:text-cyan-400">About</NavLink>
+                    <NavLink to="/contact" onClick={toggleMenu} className="block py-2 hover:text-cyan-400">Contact</NavLink>
+                    <button className='w-full mt-2 bg-cyan-700 px-3 py-1 rounded-md'>Login/Signup</button>
+                </div>
+            )}
 
         </div>
     )

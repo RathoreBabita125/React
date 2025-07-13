@@ -5,9 +5,9 @@ function Contact() {
     <div>
       
           <div className='w-full h-auto'>
-              <div className='md:w-[95vw] w-full md:flex flex-wrap md:my-15 my-30 text-center items-center m-auto rounded-xl'>
+              <div className='md:w-[95vw] w-full md:flex flex-wrap md:my-15 my-20 text-center items-center m-auto rounded-xl'>
                
-                <div className='md:w-[45vw] w-full h-auto text-center mt-20'>
+                <div className='md:w-[45vw] w-full h-auto text-center md:mt-10 '>
                   <h1 className='text-6xl font-bold '>Get in Touch:</h1>
                   <p className='text-2xl font-bold my-5'>Fill in the blank to start a conservation</p>
                   
