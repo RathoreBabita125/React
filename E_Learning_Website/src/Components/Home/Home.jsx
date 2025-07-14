@@ -1,5 +1,5 @@
 import React from 'react'
-import PersonImage from '../assets/PersonImage.png'
+import PersonImage from '../../assets/PersonImage.png'
 
 function Home() {
   return (

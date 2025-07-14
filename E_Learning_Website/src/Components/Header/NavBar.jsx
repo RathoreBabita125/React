@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import useTheme from '../Context/ThemeContext'
+import useTheme from '../../Context/ThemeContext'
 import { NavLink, Link } from 'react-router-dom'
 
 function NavBar() {
@@ -57,8 +57,11 @@ function NavBar() {
                 </div>
 
                 <div className='items-center m-auto hidden md:block'>
-                    <button className='mx-2 bg-cyan-700 text-white p-[4px] rounded-[4px] cursor-pointer'>Login/Signup</button>
+                    <NavLink to="/signup">
+                        <button className='w-[140px] h-[37px] mx-2 bg-cyan-700 text-white p-[3px] rounded-[4px] cursor-pointer hover:bg-cyan-800'>Login / Signup</button>
+                    </NavLink>
                 </div>
+
                 <div className='md:hidden'>
                     <Link
                         onClick={toggleMenu}
@@ -72,7 +75,7 @@ function NavBar() {
                     <NavLink to="/" onClick={toggleMenu} className="block py-2 hover:text-cyan-400">Home</NavLink>
                     <NavLink to="/about" onClick={toggleMenu} className="block py-2 hover:text-cyan-400">About</NavLink>
                     <NavLink to="/contact" onClick={toggleMenu} className="block py-2 hover:text-cyan-400">Contact</NavLink>
-                    <button className='w-full mt-2 bg-cyan-700 px-3 py-1 rounded-md'>Login/Signup</button>
+                    <button className='w-full mt-2 bg-cyan-700 px-3 py-1 rounded-md'>Login / Signup</button>
                 </div>
             )}
 
